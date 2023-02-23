@@ -63,6 +63,22 @@ const router = createRouter({
       ]
     },
     {
+      path: "/timetrace",
+      component: layout,
+      children: [
+        {
+          path: "timetrace",
+          name: "timetrace",
+          component: () => import('@/views/timetrace/TimeTrace.vue'),
+          meta: {
+            isshow_time: true,
+            title: '耗时追踪'
+          },
+        },
+        
+      ]
+    },
+    {
       path: "/user",
       component: layout,
       children: [

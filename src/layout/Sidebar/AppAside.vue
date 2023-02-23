@@ -1,17 +1,15 @@
 <template>
     <el-aside>
         <el-scrollbar>
+            <a href="/" class="logo">
+                <img src="@/assets/logo.svg" alt="">
+                <h1 v-show="!isCollapse">运维管理平台</h1>
+            </a> 
             <el-menu router unique-opened :collapse="isCollapse" >
-
-                <a href="/" class="logo">
-                    <img src="@/assets/logo.svg" alt="">
-                    <h1 v-show="!isCollapse">运维管理平台</h1>
-                </a> 
 
                 <el-menu-item :index="item.path" v-for="item in dashboard_list" :key="item.path">
                     <el-icon><Monitor /></el-icon> <span>{{item.meta.title}}</span>
                 </el-menu-item>
-
 
                 <el-sub-menu index="1">
                     <template #title>
@@ -29,6 +27,16 @@
                     </template>
                     <el-menu-item :index="item.path" v-for="item in db_list" :key="item.path">
                         <el-icon><Bowl /></el-icon> <span>{{item.meta.title}}</span>
+                    </el-menu-item>
+
+                </el-sub-menu>
+
+                <el-sub-menu index="3" >
+                    <template #title>
+                        <el-icon><Box /></el-icon> <span>工具类</span>
+                    </template>
+                    <el-menu-item :index="item.path" v-for="item in time_list" :key="item.path">
+                        <el-icon><AlarmClock /></el-icon> <span>{{item.meta.title}}</span>
                     </el-menu-item>
 
                 </el-sub-menu>
@@ -63,7 +71,9 @@
     const user_list = router.getRoutes().filter(a => a.meta.isshow_user)
     console.log(user_list);
 
-   
+    const time_list = router.getRoutes().filter(a => a.meta.isshow_time)
+    console.log(time_list);
+
 
 </script>
 
