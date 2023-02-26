@@ -5,14 +5,15 @@
     "src/**/*",
     "src/**/*.vue",
     "*.d.ts"
-  ],
+, "src/.env"  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": ["./env"]
   },
   "references": [
     {

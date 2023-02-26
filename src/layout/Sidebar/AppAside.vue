@@ -57,22 +57,22 @@
     import { useRouter } from 'vue-router';
 
     const router = useRouter()
-    console.log(router.getRoutes());
+    // console.log(router.getRoutes());
 
     const dashboard_list = router.getRoutes().filter(a => a.meta.isshow_dashboard)
-    console.log(dashboard_list);
+    // console.log(dashboard_list);
 
     const app_list = router.getRoutes().filter(a => a.meta.isshow_appication)
-    console.log(app_list);
+    // console.log(app_list);
     
     const db_list = router.getRoutes().filter(a => a.meta.isshow_db)
-    console.log(db_list);
+    // console.log(db_list);
 
     const user_list = router.getRoutes().filter(a => a.meta.isshow_user)
-    console.log(user_list);
+    // console.log(user_list);
 
     const time_list = router.getRoutes().filter(a => a.meta.isshow_time)
-    console.log(time_list);
+    // console.log(time_list);
 
 
 </script>
