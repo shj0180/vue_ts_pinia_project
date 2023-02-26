@@ -17,13 +17,13 @@
         </el-col>
 
         <el-col :span="5" >
-            <el-input v-model="input" placeholder="Please input pid"  :disabled="radio1==='1'" />
+            <el-input v-model="input_pid" placeholder="Please input pid"  :disabled="radio1==='1'" />
         </el-col>
     </el-row>
 
     <el-row :gutter="30" justify="start" align="middle">
         <el-col :span="30" >
-            <el-input v-model="input" placeholder="入口应用IP" /> 
+            <el-input v-model="input_ip" placeholder="入口应用IP" /> 
         </el-col>
         <el-col :span="5">
             <el-button size="large" @click="app_track">开始</el-button>
@@ -122,13 +122,16 @@ const state = reactive<{track_info?: Track | null}>({
 const radio1 = ref('1')
 
 // const radio2 = ref('1')
-const input = ref('')
+const input_pid = ref('')
+const input_ip = ref('')
+
 
 //  post 方法
 function app_track() {
     request({
-    method: 'get',
-    url: 'polls/time_trace'
+    method: 'post',
+    url: 'polls/time_trace',
+    data: {'pid': input_pid, 'ip': input_ip}
 }).then(
     res => {
         state.track_info = toRaw(res.data) 
