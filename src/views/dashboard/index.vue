@@ -1,23 +1,36 @@
 <template>
     <!-- {{ state.app_info?.total_apps_num }} -->
 
-    <el-row>
-        <!-- <el-col :span="6">
-          <el-statistic title="Daily Active Applications" :value="268" />
-        </el-col> -->
-
+    <el-row :gutter="20" class="my-row">
         <el-col :span="6">
             <el-statistic :value="state.app_info?.up_apps_num">
               <template #title>
                 <div style="display: inline-flex; align-items: center">
                   Ratio of Daily Active Applications
-                 
                 </div>
               </template>
               <template #suffix>/ {{ state.app_info?.total_apps_num }}</template>
             </el-statistic>
         </el-col>
+        <!-- <el-butdton type="primary" plain>Primary</el-butdton> -->
+        <el-col :span="6">
+          <el-button type="primary" plain>Primary</el-button>
+        </el-col>
     </el-row>
+    
+    <el-row class="my-row"> 
+      <h2>应用</h2>
+    </el-row>
+
+    <el-row :gutter="20" class="my-row">
+      <el-col :span="6">
+        <el-button type="primary" plain>Primary</el-button>
+      </el-col>
+      <!-- <template>
+        <el-button type="primary" plain>Primary</el-button>
+      </template> -->
+    </el-row>
+    
 </template>
 
 <script setup lang="ts">
@@ -54,6 +67,10 @@
 <style lang="scss" scoped>
 .el-col {
     text-align: center;
+  }
+
+  .my-row {
+    margin-bottom: 20px; /* 设置行之间的间距为 20 像素 */
   }
 
 </style>

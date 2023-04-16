@@ -33,7 +33,6 @@
     <el-divider />
     <el-row >
         <el-col >
-
             <tr v-for="site in state.track_info">
                 {{ site }}
             </tr>
@@ -41,13 +40,6 @@
         </el-col>
     </el-row>
     
-
-    
-    <!-- <br> -->
-
-    <!-- <el-tree-v2 :data="data" :props="props" :height="100" /> -->
-    
-
 </template>
 
 <script lang="ts" setup>
@@ -97,7 +89,6 @@ const props = {
 const data = createData(4, 10, 2)
 
 
-
 interface Track {
     track_info: []
 }
@@ -124,7 +115,6 @@ const radio1 = ref('1')
 // const radio2 = ref('1')
 const input_pid = ref('')
 const input_ip = ref('')
-
 
 //  post 方法
 function app_track() {
